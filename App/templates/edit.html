@@ -1,0 +1,39 @@
+{% extends 'add.html' %}
+
+{% block title %} Edit Details {% endblock %}
+
+{% block nav-brand %}
+    <i class="fas fa-user-pen"></i>&nbsp; {{ patient.name }}
+{% endblock nav-brand %}
+
+{% block addTitle %}
+Registered at : <span class="text-dark">{{ patient.created_on }}</span>
+{% endblock %}
+
+{% block Reset %}
+<button type='reset' class="btn btn-secondary"><i class="fas fa-sync-alt"></i>&nbsp; Reset</button>
+{% endblock %}
+
+{% block formaction %}
+action='/edit_patient/'
+{% endblock %}
+
+{% block NameValue %} value="{{ patient.name }}"{% endblock NameValue %} 
+
+{% block EmailValue %} value = {{ patient.email }} {% endblock EmailValue %} 
+
+{% block PhoneValue %} value = {{ patient.phone }} {% endblock PhoneValue %} 
+
+{% block AgeValue %} value = {{ patient.age }} {% endblock AgeValue %} 
+
+{% block NoteValue %}{{ patient.note }}{% endblock NoteValue %} 
+
+{% block GenderOption %}
+<option value="{{ patient.gender }}" style="background-color: gray; color: whitesmoke;">{{ patient.gender }}</option>
+{% endblock %}
+
+{% block Addbtn %}
+    <button type="submit" class="form-group btn btn-primary">
+        <i class="fas fa-plus"></i>&nbsp; Save
+    </button>
+{% endblock %}
